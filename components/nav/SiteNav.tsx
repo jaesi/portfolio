@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/lib/i18n";
-import { profile } from "@/content/profile";
+import { BrandMark } from "./BrandMark";
 import { LanguageToggle } from "./LanguageToggle";
 
 const navItems = [
@@ -21,12 +21,7 @@ export function SiteNav() {
   return (
     <header className="no-print sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-md">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link
-          href="/"
-          className="text-sm font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
-        >
-          {t(profile.name)}
-        </Link>
+        <BrandMark />
         <div className="flex items-center gap-1 sm:gap-2">
           {navItems.map((item) => {
             const active = pathname === item.href;

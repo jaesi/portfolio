@@ -8,8 +8,8 @@
   --foreground-muted: #9aa1ac;
   --foreground-subtle: #5b6270;
   --border: #22252f;
-  --accent: #5eead4;
-  --accent-strong: #2dd4bf;
+  --accent: #fbbf24;
+  --accent-strong: #f59e0b;
   --accent-secondary: #a78bfa;
   --radius-lg: 1.25rem;
   --radius-md: 0.75rem;
@@ -26,8 +26,8 @@
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
   --color-accent-secondary: var(--accent-secondary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-plex-sans), var(--font-plex-sans-kr);
+  --font-mono: var(--font-plex-mono);
 }
 
 * {

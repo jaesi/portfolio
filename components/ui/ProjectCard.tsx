@@ -23,7 +23,7 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
   const rotateY = useSpring(useMotionValue(0), { stiffness: 200, damping: 20 });
   const glowX = useMotionValue(50);
   const glowY = useMotionValue(50);
-  const glowBackground = useMotionTemplate`radial-gradient(320px circle at ${glowX}% ${glowY}%, rgba(94, 234, 212, 0.15), transparent 70%)`;
+  const glowBackground = useMotionTemplate`radial-gradient(320px circle at ${glowX}% ${glowY}%, rgba(251, 191, 36, 0.15), transparent 70%)`;
 
   function handleMouseMove(event: ReactMouseEvent<HTMLButtonElement>) {
     const bounds = event.currentTarget.getBoundingClientRect();

@@ -12,7 +12,7 @@ export function Hero() {
 
   const glowX = useSpring(useMotionValue(50), { stiffness: 60, damping: 20 });
   const glowY = useSpring(useMotionValue(35), { stiffness: 60, damping: 20 });
-  const background = useMotionTemplate`radial-gradient(680px circle at ${glowX}% ${glowY}%, rgba(94, 234, 212, 0.14), transparent 60%)`;
+  const background = useMotionTemplate`radial-gradient(680px circle at ${glowX}% ${glowY}%, rgba(251, 191, 36, 0.14), transparent 60%)`;
 
   function handleMouseMove(event: ReactMouseEvent<HTMLDivElement>) {
     const bounds = event.currentTarget.getBoundingClientRect();
