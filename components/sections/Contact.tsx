@@ -61,9 +61,8 @@ export function Contact() {
           </div>
         </ScrollReveal>
 
-        <footer className="mt-16 flex flex-col gap-2 border-t border-border pt-8 text-xs text-foreground-subtle sm:flex-row sm:items-center sm:justify-between">
+        <footer className="mt-16 border-t border-border pt-8 text-xs text-foreground-subtle">
           <p>© {new Date().getFullYear()} {t(profile.name)}</p>
-          <p>{t({ ko: "Next.js · Framer Motion으로 제작", en: "Built with Next.js & Framer Motion" })}</p>
         </footer>
       </div>
     </section>

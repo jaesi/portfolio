@@ -24,7 +24,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${profile.name.en} — ${profile.title.en}`,
+  title: `${profile.name.en} · ${profile.title.en}`,
   description: profile.summary.en,
 };
 

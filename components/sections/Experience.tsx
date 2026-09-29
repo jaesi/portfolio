@@ -3,6 +3,7 @@
 import { useLanguage } from "@/lib/i18n";
 import { experience } from "@/content/experience";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { RichText } from "@/components/ui/RichText";
 
 export function Experience() {
   const { t } = useLanguage();
@@ -45,7 +46,9 @@ export function Experience() {
                             className="flex gap-2 text-sm leading-relaxed text-foreground-muted"
                           >
                             <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground-subtle" />
-                            {t(bullet)}
+                            <span>
+                              <RichText text={t(bullet)} />
+                            </span>
                           </li>
                         ))}
                       </ul>

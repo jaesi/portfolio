@@ -20,6 +20,62 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "dostock",
+    category: { ko: "창업", en: "Startup" },
+    title: {
+      ko: "DoStock: 공시·뉴스 기반 기업 지식그래프 데이터 플랫폼",
+      en: "DoStock: Corporate Knowledge-Graph Data Platform",
+    },
+    tags: ["Python", "Neo4j", "PostgreSQL", "Airflow", "FastAPI", "Next.js"],
+    meta: {
+      period: "2025.12 - Present",
+      team: { ko: "2인 (공동창업)", en: "2 (co-founders)" },
+      stack: ["Python", "Neo4j", "PostgreSQL", "Airflow", "FastAPI", "Next.js"],
+    },
+    summary: {
+      ko: "공시·뉴스 데이터를 온톨로지 기반 지식그래프로 구조화해 기업 관계 데이터를 B2B로 공급하는 플랫폼을 공동창업해 만들고 있습니다. 초기 B2C 종목추천 서비스에서 피벗했습니다.",
+      en: "Co-founded and am building a B2B data platform that structures corporate filings and news into an ontology-driven knowledge graph. It's a pivot from an initial B2C stock-recommendation service.",
+    },
+    problem: [
+      {
+        ko: "기업 관계(주주·계열·밸류체인) 정보가 여러 소스에 흩어져 있어, 딜 후보·투자 후보를 찾으려면 사람이 수작업으로 대조해야 함",
+        en: "Company-relationship data (ownership, affiliates, value chain) is scattered across sources, so finding deal or investment candidates required manual cross-referencing",
+      },
+      {
+        ko: "초기에 시도한 B2C 종목추천(퀀트 전략 조합)은 차별화가 약해 지속 가능한 비즈니스로 이어지지 않아, 데이터 자체를 상품화하는 B2B로 피벗 필요",
+        en: "The initial B2C stock-recommendation product (combined quant strategies) lacked differentiation and didn't sustain a business, so it needed to pivot toward productizing the underlying data as a B2B offering",
+      },
+    ],
+    process: [
+      {
+        ko: "DART 공시 원문을 종목별로 개별 검토해 기업·주주·계열·밸류체인 관계를 추출하는 온톨로지를 설계, 추측 없이 공시 근거만 반영해 Neo4j 그래프DB에 적재",
+        en: "Designed an ontology extracting company, shareholder, affiliate, and value-chain relations from DART filings company-by-company, grounded strictly in disclosed evidence with no inference, then loaded it into a Neo4j graph DB",
+      },
+      {
+        ko: "국내 뉴스 스트림을 실시간 임베딩해 종목·이벤트 단위 시그널로 변환하는 Bloom-KO 파이프라인 구축, Tendril-KO 그래프에 연결",
+        en: "Built the Bloom-KO pipeline that embeds the real-time Korean news stream into stock/event-level signals, linked into the Tendril-KO graph",
+      },
+      {
+        ko: "삼일PwC Deal 부문에 지식그래프 기반 딜 소싱·매칭 자동화를 제안하고, 같은 그래프를 헤지펀드 퀀트·펀더멘털 팀 대상 대체데이터로 확장",
+        en: "Proposed knowledge-graph-based deal sourcing and matching automation to Samil PwC's Deal division, and extended the same graph as alternative data for hedge fund quant and fundamental teams",
+      },
+    ],
+    result: [
+      {
+        ko: "공시 기반 기업 지식그래프 데이터 상품 Tendril-KO 구축 완료, KRX 상장사 2,595개 커버",
+        en: "Shipped Tendril-KO, a filings-based corporate knowledge-graph data product covering 2,595 KRX-listed companies",
+      },
+      {
+        ko: "실시간 뉴스 임베딩 데이터 상품 Bloom-KO 구축, 상시 갱신 운영 중",
+        en: "Built Bloom-KO, a real-time news-embedding data product, and operate it with continuous updates",
+      },
+      {
+        ko: "Neudata(글로벌 대체데이터 카탈로그), Point72(글로벌 헤지펀드) 데이터소싱팀과 데이터 평가 미팅을 진행했고, 글로벌 대체데이터 마켓플레이스향 공급 협업을 준비 중",
+        en: "Held data evaluation meetings with Neudata (global alt-data catalog) and Point72 (global hedge fund) data-sourcing team, and are preparing a supply partnership with a global alternative-data marketplace",
+      },
+    ],
+  },
+  {
     id: "transit-od",
     category: { ko: "실무", en: "Professional" },
     title: {
@@ -38,8 +94,8 @@ export const projects: Project[] = [
     },
     problem: [
       {
-        ko: "수도권 한 달 기준 약 4억 행의 수단통행 단위 Raw 데이터 — 집계와 상품성을 갖춘 설계가 필요",
-        en: "~400M rows/month of raw trip-level data — needed a design that balanced granularity with commercial value",
+        ko: "수도권 한 달 기준 약 4억 행의 수단통행 단위 Raw 데이터로, 집계와 상품성을 갖춘 설계가 필요",
+        en: "~400M rows/month of raw trip-level data, needing a design that balanced granularity with commercial value",
       },
       {
         ko: "고객사(금융기관)에 생활 패턴 집계 데이터(통근·통학, 체류시간)를 제공해야 하는 목표",
@@ -53,7 +109,7 @@ export const projects: Project[] = [
       },
       {
         ko: "출·퇴근 시간 히트맵, 청소년 시간대별 이용패턴 등 데이터 EDA로 패턴 인식 로직 설계",
-        en: "Designed pattern-recognition logic via EDA — commuting-hour heatmaps, youth usage patterns by time/weekday",
+        en: "Designed pattern-recognition logic via EDA, including commuting-hour heatmaps and youth usage patterns by time and weekday",
       },
     ],
     result: [
@@ -75,8 +131,8 @@ export const projects: Project[] = [
     id: "commercial-avm",
     category: { ko: "실무", en: "Professional" },
     title: {
-      ko: "부동산 자동가치산정 모델(AVM) 개발 — 상업용 부동산 시세 예측",
-      en: "Automated Real-Estate Valuation Model (AVM) — Commercial Property",
+      ko: "부동산 자동가치산정 모델(AVM) 개발: 상업용 부동산 시세 예측",
+      en: "Automated Real-Estate Valuation Model (AVM): Commercial Property",
     },
     tags: ["PostgreSQL", "scikit-learn", "Pandas"],
     meta: {
@@ -114,7 +170,7 @@ export const projects: Project[] = [
     ],
     result: [
       {
-        ko: "건물별 마이크로 전환율을 전국 단위로 산출 완료 — 기존에는 불가능했던 세밀도",
+        ko: "건물별 마이크로 전환율을 전국 단위로 산출 완료, 기존에는 불가능했던 세밀도",
         en: "Computed nationwide building-level micro conversion rates at a granularity previously unattainable",
       },
       {
@@ -132,7 +188,7 @@ export const projects: Project[] = [
     category: { ko: "공모전", en: "Competition" },
     title: {
       ko: "LH 국토도시 데이터 분석과제: 세종신도시 지역 상가 공실률 추정",
-      en: "LH National Land & Urban Data Analytics Challenge — Sejong Vacancy Estimation",
+      en: "LH National Land & Urban Data Analytics Challenge: Sejong Vacancy Estimation",
     },
     tags: ["PostgreSQL", "scikit-learn", "Pandas", "Geopandas"],
     meta: {
@@ -142,7 +198,7 @@ export const projects: Project[] = [
     },
     summary: {
       ko: "표본조사에 의존하던 상가 공실률을 빅데이터 기반으로 필지·연도 단위까지 정밀 산출하고, 향후 18개월 공실률을 예측해 LH 공모전 최우수상을 수상했습니다.",
-      en: "Replaced sample-survey vacancy estimates with big-data, parcel-level annual figures and an 18-month forecast — winning the LH competition's top prize.",
+      en: "Replaced sample-survey vacancy estimates with big-data, parcel-level annual figures and an 18-month forecast, winning the LH competition's top prize.",
     },
     problem: [
       {
@@ -151,7 +207,7 @@ export const projects: Project[] = [
       },
       {
         ko: "데이터 기반 공실률 지표가 없어 조사원의 표본조사에만 의존",
-        en: "No data-driven vacancy metric existed — estimates relied solely on manual field surveys",
+        en: "No data-driven vacancy metric existed; estimates relied solely on manual field surveys",
       },
     ],
     process: [
@@ -170,7 +226,7 @@ export const projects: Project[] = [
     ],
     result: [
       {
-        ko: "향후 18개월 공실률 예측 — 전수 조사 수준의 빅데이터로 세종시 전체 상업용 건물 공실률 추정, 기존 표본조사 대비 높은 정확도 확보",
+        ko: "향후 18개월 공실률을 예측해, 전수 조사 수준의 빅데이터로 세종시 전체 상업용 건물 공실률 추정, 기존 표본조사 대비 높은 정확도 확보",
         en: "Forecast 18-month vacancy across all of Sejong's commercial buildings at census-level granularity, beating sample-survey accuracy",
       },
       {
@@ -197,8 +253,8 @@ export const projects: Project[] = [
       stack: ["FastAPI", "Next.js", "Supabase", "OpenAI API", "Docker"],
     },
     summary: {
-      ko: "가구 디자이너의 제작 과정을 단축하는 생성형 AI 웹 서비스를 팀 리드로 개발 — DB 설계, 백엔드, AI 모델 훈련을 주도했습니다.",
-      en: "Led development of a generative-AI web service that shortens furniture designers' workflow — owning DB design, backend, and model training.",
+      ko: "가구 디자이너의 제작 과정을 단축하는 생성형 AI 웹 서비스를 팀 리드로 개발했습니다. DB 설계, 백엔드, AI 모델 훈련을 주도했습니다.",
+      en: "Led development of a generative-AI web service that shortens furniture designers' workflow, owning DB design, backend, and model training.",
     },
     problem: [
       {
@@ -250,7 +306,7 @@ export const projects: Project[] = [
     },
     summary: {
       ko: "소비자가 직접 제공한 제로파티 설문 데이터로 CART 결정트리 기반 패션 추천 시스템의 실현 가능성을 검증하고, SSCI급 저널에 게재했습니다.",
-      en: "Validated the feasibility of a CART decision-tree fashion recommender using consumer-provided zero-party survey data — published in an SSCI-indexed journal.",
+      en: "Validated the feasibility of a CART decision-tree fashion recommender using consumer-provided zero-party survey data, published in an SSCI-indexed journal.",
     },
     problem: [
       {
@@ -278,8 +334,8 @@ export const projects: Project[] = [
         en: "Achieved 86.67% (Decision Tree) and 90% (Random Forest) test accuracy after tuning, F1 score 0.85",
       },
       {
-        ko: "제로파티 데이터만으로 개인화 추천이 가능함을 검증 — 서드파티 쿠키의 대체재로 활용 가능성 확인",
-        en: "Verified personalized recommendation is feasible with zero-party data alone — a viable substitute for third-party cookies",
+        ko: "제로파티 데이터만으로 개인화 추천이 가능함을 검증했고, 서드파티 쿠키의 대체재로 활용 가능성 확인",
+        en: "Verified personalized recommendation is feasible with zero-party data alone, a viable substitute for third-party cookies",
       },
       {
         ko: "Journal of Fashion Marketing and Management (SSCI, IF 4.9)에 2025년 10월 게재",

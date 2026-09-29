@@ -17,7 +17,7 @@ export function Skills() {
           </span>
         </ScrollReveal>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {coreCompetencies.map((group, index) => (
             <ScrollReveal key={t(group.title)} delay={index * 0.08}>
               <motion.div

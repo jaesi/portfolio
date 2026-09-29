@@ -1,21 +1,21 @@
 import type { Localized } from "@/lib/i18n";
 
 export const profile = {
-  name: { ko: "문재식", en: "Jaesik Moon" } satisfies Localized,
+  name: { ko: "문재식", en: "Jace Moon" } satisfies Localized,
   title: {
-    ko: "ML Engineer / Data Scientist",
-    en: "ML Engineer / Data Scientist",
+    ko: "Founder / ML Engineer",
+    en: "Founder / ML Engineer",
   } satisfies Localized,
   tagline: {
     ko: "정해진 문제보다, 아직 풀리지 않은 한계에 도전하며 세상을 바꾸고 싶습니다.",
-    en: "I thrive on challenges beyond well-defined problems — structuring complex realities to push past unsolved limits.",
+    en: "I thrive on challenges beyond well-defined problems, structuring complex realities to push past unsolved limits.",
   } satisfies Localized,
   summary: {
-    ko: "대규모 데이터 파이프라인 구축과 ML 모델 개발 경험을 보유한 ML Engineer입니다. 실무에서 일 600만 건 규모의 교통카드 데이터 ETL 파이프라인을 단독 설계·구축하여 새마을금고 정기 데이터 공급 시스템을 완성했으며, 부동산 AVM 모델 운영 및 개선에 기여했습니다. 컴퓨터 비전(YOLOv8), 시계열 예측(ARIMA/Prophet), 머신러닝 모델링 등 다양한 프로젝트를 수행했으며, SSCI급 논문 출판과 LH 공모전 최우수상 등을 통해 연구 역량과 실행력을 입증했습니다.",
-    en: "ML Engineer with hands-on experience building large-scale data pipelines and ML models. Solo-designed and built an ETL pipeline processing 6 million transit-card records per day to power a recurring data-supply contract with a financial institution, and contributed to operating and improving a real-estate automated valuation model (AVM). Delivered projects spanning computer vision (YOLOv8), time-series forecasting (ARIMA/Prophet), and applied ML — backed by an SSCI-indexed publication and a top-prize win in a national LH data analytics competition.",
+    ko: "데이터 상품을 기획하고 만드는 Founder이자 ML Engineer입니다. 2025년 12월 아웃스탠딩 프로즈를 공동창업해, 공시·뉴스 데이터를 온톨로지 기반 지식그래프로 연결한 기업 데이터 플랫폼 'DoStock'을 만들고 있습니다. 이전 빅밸류에서는 일 600만 건 규모의 교통카드 ETL 파이프라인을 단독 구축해 금융기관과 정기 데이터 공급 계약을 성사시켰습니다.",
+    en: "Founder and ML Engineer who builds data products end to end. Co-founded Outstanding Pros in December 2025, building DoStock, an ontology-driven knowledge-graph platform that connects corporate filings and news into a B2B data product. Previously at BigValue, solo-built an ETL pipeline processing 6M transit-card records per day that landed a recurring data-supply contract with a financial institution.",
   } satisfies Localized,
   location: { ko: "서울, 대한민국", en: "Seoul, South Korea" } satisfies Localized,
-  email: "answotlr54@gmail.com",
+  email: "jace@outstanding-pros.xyz",
   phone: "010-4704-8542",
   github: "https://github.com/jaesi",
   linkedin: "https://www.linkedin.com/in/jae-sik-moon-b84b812a6",
@@ -53,28 +53,28 @@ export const awards: AwardEntry[] = [
   {
     title: {
       ko: "LH COMPAS 국토도시 데이터 분석대전 최우수상",
-      en: "LH COMPAS National Land & Urban Data Analytics Challenge — Grand Prize",
+      en: "LH COMPAS National Land & Urban Data Analytics Challenge, Grand Prize",
     },
     period: "2024.07 - 2024.09",
   },
   {
     title: {
       ko: "WCSE 월드 스마트시티 엑스포 우수상",
-      en: "World Smart City Expo (WCSE) — Excellence Award",
+      en: "World Smart City Expo (WCSE), Excellence Award",
     },
     period: "2024",
   },
   {
     title: {
       ko: "현대 아산나눔재단 & 서울대 기후기술 창업 혁신대전 지속가능성장상",
-      en: "Asan Nanum Foundation & SNU Climate-Tech Startup Innovation Expo — Sustainable Growth Award",
+      en: "Asan Nanum Foundation & SNU Climate-Tech Startup Innovation Expo, Sustainable Growth Award",
     },
     period: "2024",
   },
   {
     title: {
       ko: "서울 AI 허브 영포럼 배너피칭 2등",
-      en: "Seoul AI Hub Young Forum — Banner Pitching, 2nd Place",
+      en: "Seoul AI Hub Young Forum, Banner Pitching, 2nd Place",
     },
     period: "2025",
   },

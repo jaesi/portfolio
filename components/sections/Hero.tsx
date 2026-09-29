@@ -36,7 +36,7 @@ export function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background-elevated px-4 py-1.5 text-xs font-medium tracking-wide text-foreground-muted"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          {t({ ko: "빅밸류 · 데이터 사이언티스트", en: "BigValue · Data Scientist" })}
+          {t({ ko: "아웃스탠딩 프로즈 · CEO", en: "Outstanding Pros · CEO" })}
         </motion.p>
 
         <motion.h1
@@ -77,7 +77,7 @@ export function Hero() {
             external={false}
             className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-background transition-transform"
           >
-            {t({ ko: "이메일 보내기", en: "Get in touch" })}
+            {t({ ko: "E-mail", en: "E-mail" })}
           </MagneticButton>
           <MagneticButton
             href={profile.github}

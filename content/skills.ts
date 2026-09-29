@@ -4,6 +4,10 @@ export type SkillGroup = { title: Localized; items: string[] };
 
 export const coreCompetencies: SkillGroup[] = [
   {
+    title: { ko: "AI 에이전트 & 지식그래프", en: "AI Agents & Knowledge Graph" },
+    items: ["LLM Agents (Claude)", "Multi-Agent Pipelines", "Ontology Design", "Neo4j (GraphRAG)"],
+  },
+  {
     title: { ko: "ML 모델 개발", en: "ML Model Development" },
     items: [
       "XGBoost",
@@ -51,19 +55,21 @@ export const technicalSkills: SkillGroup[] = [
     title: { ko: "데이터 엔지니어링 & DB", en: "Data Engineering & Databases" },
     items: [
       "ETL Pipeline",
+      "Apache Airflow",
       "PostgreSQL",
       "DuckDB",
-      "BlazeGraph (Graph DB)",
+      "Neo4j / BlazeGraph (Graph DB)",
+      "MinIO (S3-compatible)",
       "geopandas / shapely",
     ],
   },
   {
     title: { ko: "MLOps & 백엔드", en: "MLOps & Backend" },
-    items: ["FastAPI", "Flask", "Docker / Docker Compose", "Poetry"],
+    items: ["FastAPI", "Flask", "Next.js / React / TypeScript", "Directus (Headless CMS)", "Docker / Docker Compose", "Poetry"],
   },
   {
     title: { ko: "시각화 & 모니터링", en: "Visualization & Monitoring" },
-    items: ["Grafana", "matplotlib", "seaborn"],
+    items: ["Grafana", "Metabase", "matplotlib", "seaborn"],
   },
   {
     title: { ko: "협업 도구", en: "Collaboration" },

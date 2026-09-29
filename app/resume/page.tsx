@@ -6,6 +6,7 @@ import { experience } from "@/content/experience";
 import { projects } from "@/content/projects";
 import { coreCompetencies, technicalSkills } from "@/content/skills";
 import { PrintButton } from "@/components/ui/PrintButton";
+import { RichText } from "@/components/ui/RichText";
 
 export default function ResumePage() {
   const { t } = useLanguage();
@@ -42,7 +43,7 @@ export default function ResumePage() {
 
         {/* Core competencies */}
         <Section title={t({ ko: "핵심 역량", en: "Core Competencies" })}>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2">
             {coreCompetencies.map((group) => (
               <div key={t(group.title)} className="print-avoid-break">
                 <p className="text-sm font-semibold text-foreground">{t(group.title)}</p>
@@ -73,7 +74,9 @@ export default function ResumePage() {
                       {highlight.bullets.map((bullet) => (
                         <li key={t(bullet)} className="flex gap-2 text-xs leading-relaxed text-foreground-muted">
                           <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-foreground-subtle" />
-                          {t(bullet)}
+                          <span>
+                            <RichText text={t(bullet)} />
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -167,7 +170,7 @@ export default function ResumePage() {
           <ul className="space-y-2">
             {publications.map((pub) => (
               <li key={t(pub.title)} className="text-xs leading-relaxed text-foreground-muted print-avoid-break">
-                <span className="text-foreground">{t(pub.title)}</span> — {t(pub.venue)}, {pub.date}
+                <span className="text-foreground">{t(pub.title)}</span> · {t(pub.venue)}, {pub.date}
               </li>
             ))}
           </ul>
