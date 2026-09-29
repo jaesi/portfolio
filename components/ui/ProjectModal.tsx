@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect } from "react";
 import { useLanguage } from "@/lib/i18n";
 import type { Project } from "@/content/projects";
@@ -82,6 +83,13 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <ModalBlock title={t({ ko: "과정", en: "Process" })} items={project.process.map(t)} />
               <ModalBlock title={t({ ko: "결과", en: "Result" })} items={project.result.map(t)} accent />
             </div>
+
+            <Link
+              href={`/works/${project.id}`}
+              className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+            >
+              {t({ ko: "전체 케이스 스터디 보기", en: "Read the full case study" })} →
+            </Link>
           </motion.div>
         </motion.div>
       )}
