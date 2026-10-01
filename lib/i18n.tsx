@@ -26,6 +26,13 @@ function readStoredLang(): Lang | null {
   }
 }
 
+// A `?lang=en` link (resume, application forms) wins over the stored or
+// browser preference, so shared links always open in the intended language.
+function readUrlLang(): Lang | null {
+  const param = new URLSearchParams(window.location.search).get("lang");
+  return param === "ko" || param === "en" ? param : null;
+}
+
 function detectBrowserLang(): Lang {
   return window.navigator.language.toLowerCase().startsWith("ko") ? "ko" : "en";
 }
@@ -34,7 +41,7 @@ function detectBrowserLang(): Lang {
 // language setting) is an external store, so we subscribe to it rather than
 // mirroring it into useState inside an effect.
 function getSnapshot(): Lang {
-  return readStoredLang() ?? detectBrowserLang();
+  return readUrlLang() ?? readStoredLang() ?? detectBrowserLang();
 }
 
 function getServerSnapshot(): Lang {
@@ -55,6 +62,12 @@ function writeLang(lang: Lang) {
     window.localStorage.setItem(STORAGE_KEY, lang);
   } catch {
     // localStorage unavailable (private mode, etc.) — in-memory only for this tab
+  }
+  // Keep a `?lang=` param in sync so it doesn't override the toggle.
+  if (readUrlLang()) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", lang);
+    window.history.replaceState(window.history.state, "", url);
   }
   window.dispatchEvent(new Event(LANG_EVENT));
 }
@@ -80,6 +93,19 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+
+  // Persist a `?lang=` choice so it survives client-side navigation, which
+  // drops the query string.
+  useEffect(() => {
+    const urlLang = readUrlLang();
+    if (urlLang && readStoredLang() !== urlLang) {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, urlLang);
+      } catch {
+        // localStorage unavailable — the URL param still applies on this page
+      }
+    }
+  }, []);
 
   const value = useMemo<LanguageContextValue>(
     () => ({
